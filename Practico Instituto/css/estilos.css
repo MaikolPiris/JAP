@@ -1,0 +1,39 @@
+body{
+    background:url("../img/englandBrindeBackground.jpg");
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+nav, footer{
+    background-color: rgba(18,2,74,0.9)
+}
+
+.imagenCard{
+    width:100%
+}
+
+#dtable{
+    background-color: white;
+}
+
+.main{
+    min-height: 800px;
+}
+
+.carousel-caption {
+  z-index: 10;
+  bottom: 3rem;
+}
+
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}

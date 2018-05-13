@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Instituto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body class="container-fluid">
+<header>
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/brand.jpg" width="60px" height="30px" class="d-inline-block align-top" alt="Logo"> Instituto Columbia 
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse " id="navegacion">
+                    <div class="navbar-nav ml-auto text-center">
+                        <div class="nav-item dropdown">
+                            <button class="nav-item nav-link dropdown-toggle btn btn-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Iniciar Sesión</button>
+
+                            <div class="dropdown-menu pr-2 pl-2" aria-labelledby="navbarDropdown">
+
+
+                                <form>
+                                    <div class="form-group d-flex flex-row justify-content-around align-items-center">
+                                        <span><img src="img/avatarLogin.svg" height="20px" width="20px" alt="userIcon"></span>   
+                                        <input type="text" class="form-control" id="formLName">
+                                    </div>
+                                    <div class="form-group d-flex flex-row justify-content-around align-items-center">
+                                        <span><img src="img/clave.svg" height="20px" width="20px" alt="ClaveIcon"></span>  
+                                        <input type="password" class="form-control" id="formLApellido">
+                                    </div>
+                                    <div class="form-group d-flex flex-row justify-content-around">
+                                        <input type="reset" class="btn btn-default" value="Reset">
+                                        <input type="submit" class="btn btn-default" id="Ingresar" value="Login">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <a class="nav-item nav-link" href="alumnos.html">Alumnos</a>
+                        <a class="nav-item nav-link" href="index.html">Inicio</a>
+                        <a class="nav-item nav-link" href="cursos.html">Cursos</a>
+                        <a class="nav-item nav-link active" href="contacto.html">Contacto</a>
+                    </div>
+                </div> 
+            </nav>
+        </header>
+        
+        <section class="main p-5">
+            <div class="mb-3" id="dtable">
+		<div class="table-responsive">
+                    <table class="table table-hover" id="tabla1">
+                    </table>
+		</div>
+            </div>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Agregar Alumno</button>
+
+	<!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+		
+                    <div class="modal-content">
+			<div class="modal-header">
+                            <h3 class="modal-title">Ingresar Alumno Nuevo</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+                            <form onsubmit="return agregarAlumno();" id="formModal1">
+				<div class="form-group">
+                                    <label id="formLabelNombre"for="text">Nombre:</label>
+                                    <input type="text" class="form-control" id="formName" pattern="[a-z A-Z]{5,15}" title="a-z entre 5 y 20 caracteres" required>
+				</div>
+				<div class="form-group">
+                                    <label id="formLabelApellido" for="text">Apellido:</label>
+                                    <input type="text" class="form-control" id="formApellido" pattern="[a-z A-Z]{5,20}" title="a-z entre 5 y 20 caracteres" required>
+				</div>
+				<div class="form-group">
+                                    <label for="number">Edad:</label>
+                                    <input type="number" class="form-control" id="formEdad" required>
+				</div>
+				<div class="form-group">
+                                    <label for="email">EMail:</label>
+                                    <input type="email" class="form-control" id="formEMail" required>
+				</div>
+				<div class="form-group">
+                                    <label for="text">Link de Foto:</label>
+                                    <input type="text" class="form-control" id="formLinkFoto" required>
+				</div>
+								
+				<div class="form-group">
+                                    <input type="reset" class="btn btn-default">
+                                    <input type="submit" class="btn btn-default" id="agregar">
+				</div>
+                                <div id="errbox">
+                                    
+                                </div>
+                            </form>
+			</div>
+                    </div>
+		</div>
+            </div>
+        </section>
+        
+        <footer class="m-3">
+            <div class="row">
+                <div class="col-4">
+                    <h4 class="text-info">Dirección</h4>
+                    <p class="text-info">Calle Falsa 123</p>
+                </div>
+                <div class="col-4">
+                    <h4 class="text-info">Teléfono</h4>
+                    <p class="text-info">24231456 - 099123456</p>
+                </div>
+                <div class="col-4">
+                    <h4 class="text-info">EMail</h4>
+                    <p class="text-info">contacto@columbia.com</p>
+                </div>
+            </div>
+        </footer>
+        <script src="js/jquery-3.3.1.min.js"</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/codigo.js"></script>
+    </body>
+</html>
